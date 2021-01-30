@@ -1,21 +1,12 @@
 <template>
     <div class="app">
-        <h1>这里是一个手动搭建的vussss</h1>
-        <button>{{ count }}</button>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
 export default {
-    name: 'app',
-    setup() {
-        const count = ref(0);
-
-        return {
-            count 
-        }
-    }
+    name: 'app'
 }
 </script>
 

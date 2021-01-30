@@ -1,10 +1,26 @@
 <template>
-    <div class="example">index</div>
+    <div class="example">
+        <button @click="pus">+1</button>
+        {{ count }}
+    </div>
 </template>
 
-<script>
+<script ts>
+import { ref } from 'vue';
 export default {
-    name: 'Index'
+    name: 'Index',
+    setup() {
+        const count = ref(0);
+
+        const pus = () => {
+            count.value++
+        }
+
+        return {
+            count,
+            pus 
+        }
+    }
 }
 </script>
 <style lang="less" scoped>

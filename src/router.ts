@@ -1,14 +1,14 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
-// import Index from './example/index.vue';
+import Index from './example/index.vue';
 
 
 const routes: RouteRecordRaw [] = [
-    // {
-    //     path: '/',
-    //     name: 'Index',
-    //     component: Index
-    // }
+    {
+        path: '/',
+        name: 'Index',
+        component: Index
+    }
 ];
 
 
