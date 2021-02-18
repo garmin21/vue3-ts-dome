@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@vue/compiler-sfc": "^3.0.5",
@@ -31,6 +32,7 @@
     "less-loader": "^7.3.0",
     "style-loader": "^2.0.0",
     "vue": "^3.0.5",
+    "vue-class-component": "^7.2.6",
     "vue-loader": "^16.1.2",
     "vue-router": "4"
   }

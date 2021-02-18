@@ -1,24 +1,34 @@
 <template>
+    <button @click="visible = !visible">按钮组件</button>
     <div class="example">
-        <button @click="pus">+1</button>
-        {{ count }}
+        <JmModal :closeTitle="'关闭'" :visible="visible" @close="close">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Ea perferendis cum ratione iste saepe ab? Exercitationem dicta quia nostrum architecto ab eos, 
+            doloribus earum labore alias repellat quidem rerum possimus.
+        </JmModal>
     </div>
 </template>
 
 <script ts>
 import { ref } from 'vue';
+import JmModal from '../package/modal/index'
 export default {
     name: 'Index',
+    components: {
+        JmModal
+    },
     setup() {
-        const count = ref(0);
+       const visible = ref(false);
 
-        const pus = () => {
-            count.value++
-        }
-
+       /**
+        * 关闭弹窗
+        */
+       const close = () => {
+           visible.value = false;
+       }
         return {
-            count,
-            pus 
+            visible,
+            close 
         }
     }
 }
