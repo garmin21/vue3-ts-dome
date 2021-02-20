@@ -2,7 +2,7 @@
     <teleport to="body">
        <transition name="slide-fade">
             <div class="warpper" v-if="visible" >
-                <header class="popup-title">
+                <header v-if="$slots.header" class="popup-title">
                     <slot name="header" class="title">
                         <button @click="handleClick" class="close-btn">{{ closeTitle }}</button>
                     </slot>
@@ -10,8 +10,8 @@
                 <section class="popup-body">
                     <slot></slot>
                 </section>
-                <footer class="popup-footer">
-
+                <footer v-if="$slots.footer" class="popup-footer">
+                    <slot name="footer"></slot>
                 </footer>
             </div>
        </transition>
@@ -40,51 +40,50 @@ export default defineComponent({
     }
 })
 
-// 1. 挂在相同节点下不会冲突
-// 2. teleport上的class无效
-// 3. setup 中 this 不存在
+
 </script>
-<style  scoped>
+<style scoped>
 .warpper{
     position: fixed;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: 999;
     box-sizing: border-box;
-    margin: auto;
     width: 520px;
     height: 680px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #cccccc;
-    background-color: white;
+    margin: auto;
     padding: 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ccc;
 }
 
 .mask-layer {
     position: fixed;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: 998;
     background-color: rgba(0, 0, 0, .8);
 }
 
 /* 可以设置不同的进入和离开动画   */
+
 /* 设置持续时间和动画函数        */
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
+    transform: translateX(20px);
+    opacity: 0;
 }
 </style>
