@@ -13,7 +13,12 @@
 
 
 <script lang='ts'>
-import { ref, defineComponent, getCurrentInstance } from 'vue';
+import { 
+    ref, 
+    defineComponent, 
+    getCurrentInstance, 
+    watch 
+} from 'vue';
 
 const COUNT_INDEX = 0;
 
@@ -25,9 +30,16 @@ export default defineComponent({
             required: true
         },
     },
-    setup() {
+    setup(props) {
         const internalInstance = getCurrentInstance();
         const index = ref(COUNT_INDEX);
+
+
+        // watch
+        watch(() => props.visible, (visible, prevVisible) => {
+            console.log(visible)
+        })
+
         return {
             index
         }
