@@ -3165,6 +3165,11 @@ js-tokens@^4.0.0:
   resolved "https://registry.npm.taobao.org/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
 
+js-web-screen-shot@^1.1.0:
+  version "1.1.0"
+  resolved "http://betanpm.followme-internal.com/js-web-screen-shot/-/js-web-screen-shot-1.1.0.tgz#ae4519eb59123dceb3dc7cec79ddf7741d3851d5"
+  integrity sha512-6f+Yir4S9l3GSxSlJfn685+LkT+twh9dPZBxkwzPofNd2ScSn3tASizqrIfHgw7V8QeLbME4JFPTKQKEtCtE6Q==
+
 jsesc@^2.5.1:
   version "2.5.2"
   resolved "https://registry.npm.taobao.org/jsesc/download/jsesc-2.5.2.tgz?cache=0&sync_timestamp=1603891232110&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjsesc%2Fdownload%2Fjsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"

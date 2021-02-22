@@ -1,22 +1,12 @@
 <template>
-    <button @click="visible = !visible">按钮组件</button>
-    <div class="example">
-        <JmModal :closeTitle="'关闭'" :visible="visible" @close="close">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Ea perferendis cum ratione iste saepe ab? Exercitationem dicta quia nostrum architecto ab eos, 
-            doloribus earum labore alias repellat quidem rerum possimus.
-        </JmModal>
-    </div>
+    <button @click="openScreenShort">打开截图工具</button>
 </template>
 
 <script ts>
 import { ref } from 'vue';
-import JmModal from '../package/modal/index'
+import ScreenShort from "js-web-screen-shot";
 export default {
     name: 'Index',
-    components: {
-        JmModal
-    },
     setup() {
        const visible = ref(false);
 
@@ -26,9 +16,17 @@ export default {
        const close = () => {
            visible.value = false;
        }
+       
+       /**
+        * 打开截图工具
+        */
+        const openScreenShort = () => {
+            new ScreenShort();
+        }
         return {
             visible,
-            close 
+            close,
+            openScreenShort
         }
     }
 }
